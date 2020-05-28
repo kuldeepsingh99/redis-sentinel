@@ -16,5 +16,4 @@ In the customer service we are using MYSQL as Database
 
 * Copy all [redis-sentinel](https://github.com/kuldeepsingh99/redis-sentinel/tree/master/redis-sentinel) folder and docker-compose.yaml file to any directory
 
-* We need to execute this SQL to create Table
-
+* We need to execute this [SQL](https://github.com/kuldeepsingh99/redis-sentinel/blob/master/customer.sql) to create Table
