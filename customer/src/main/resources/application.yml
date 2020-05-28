@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    url: jdbc:mysql://docker-mysql:3306/customerdb
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
+    
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  
+
+  cache:
+    type: redis  
+    
+  redis:
+    sentinel:
+      master: mymaster
+      nodes:
+        - redis-sentinel:26379
+        - redis-sentinel-1:26380
+    timeout: 1s
+        
+    lettuce:
+      cluster:
+        refresh:
+          adaptive: true
+          period: 5s
+
+
+management:
+  endpoints:
+    web: 
+      exposure:
+        include:
+        - "*"
+    
+server:
+  port: 8080
+  
+logging:
+  file:
+    name: customer.log
+    path: ../logs
+    
